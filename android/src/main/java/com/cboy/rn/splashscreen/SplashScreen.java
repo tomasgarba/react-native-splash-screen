@@ -55,7 +55,11 @@ public class SplashScreen {
             @Override
             public void run() {
                 if (mSplashDialog != null && mSplashDialog.isShowing()) {
-                    mSplashDialog.dismiss();
+                  try {
+                      mSplashDialog.dismiss();
+                  } catch(Exception e) {
+                      // System.out.println("SplashScreen exception e: " + e.getMessage());
+                  }
                 }
             }
         });
